@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Transactions Filter</title>
+</head>
+<body>
+
+
+    <div class="main">
+        <h3>Scan wallet and filter out specific project distribution transactions.</h3>
+        <div class="file">
+            <form id="myForm">
+                <input type="file" id="csvFile" accept=".csv" />
+                <input type="submit" value="upload" />
+            </form>
+        </div>
+        <div class="table">
+            <table>
+                <thead id="thead">
+
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="filters">
+            <select name="network" id="network">
+                <option value="0">Binance Smart Chain</option>
+                <option value="1">Etherium Main Network</option>
+            </select>
+            <input id="wallet_from" type="text" placeholder="wallet from (optional)">
+            <input id="wallet_to" type="text" placeholder="wallet to (disperse usually)">
+            <input id="contract" type="text" placeholder="token contract">
+        </div>
+        <div class="button">
+            <button id="filter">filter</button>
+        </div>
+        <div class="result hidden">
+            <div id="closer">x</div>
+            <div class="result_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaction Hash</th>
+                            <th>Date Time</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="result_tbody">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="result-options">
+                <button id="copy_t_data">copy table content</button>
+                <button id="copy_t_links">copy transaction links</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/main.js"></script>
+</body>
+</html>
